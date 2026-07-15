@@ -1,0 +1,13 @@
+# Render Blueprint — deploy with "New +" → "Blueprint" and point at this repo.
+# Static site: the whole demo prerenders (output: "export" in next.config.mjs),
+# so there's no server, no database, no disk — and static sites are free on
+# Render with no cold-start sleep.
+services:
+  - type: web
+    name: copperline-roofing-demo
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./out
+    envVars:
+      - key: NODE_VERSION
+        value: 22.13.1
