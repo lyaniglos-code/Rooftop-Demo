@@ -3,9 +3,9 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
-  title: "Copperline Roofing Co. — Raise the standard overhead",
+  title: "Copperline Roofing Co. | Roof replacement & storm repair",
   description:
-    "Demo website for a fictional roofing company. Craft-grade roofing, honest inspections, written warranties. Built to showcase modern web design for any trade business.",
+    "Demo website for a fictional roofing company: replacements, storm repair, metal roofs and free inspections. Built to showcase web design for trade businesses.",
 };
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap"
           rel="stylesheet"
         />
       </head>

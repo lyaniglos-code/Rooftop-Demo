@@ -1,63 +1,74 @@
+"use client";
+
+import { useRef } from "react";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { site } from "@/data/site";
 
+/** Footer with an oversized wordmark that rises into place as you reach it. */
 export function Footer() {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"] });
+  const y = useTransform(scrollYProgress, [0, 1], ["70%", "0%"]);
+
   return (
-    <footer className="border-t border-ink-950/[0.08] bg-paper-200/70">
-      <div className="mx-auto max-w-page px-6 py-14 md:px-8">
-        <div className="flex flex-col justify-between gap-10 md:flex-row">
+    <footer ref={ref} className="overflow-hidden border-t border-bone/10 bg-coal-900">
+      <div className="mx-auto max-w-page px-5 pt-16 md:px-8">
+        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
-            <p className="font-display text-xl font-bold text-ink-950">
-              {site.name}
-              <span className="text-copper">.</span>
+            <p className="font-display text-3xl font-extrabold uppercase">{site.legalName}</p>
+            <p className="mt-3 text-sm leading-relaxed text-bone/55">
+              Roof replacement, storm repair and metal roofing in {site.serviceArea}.
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-ink-950/55">
-              {site.tagline} {site.serviceArea}.
-            </p>
+            <p className="mt-3 text-sm text-bone/40">{site.license} · Insured</p>
           </div>
-
-          <div className="grid grid-cols-2 gap-10 text-sm sm:grid-cols-3">
-            <div>
-              <p className="font-semibold text-ink-950/80">Explore</p>
-              <ul className="mt-3 space-y-2 text-ink-950/55">
-                <li><a href="#build" className="transition-colors hover:text-copper">The Build</a></li>
-                <li><a href="#services" className="transition-colors hover:text-copper">Services</a></li>
-                <li><a href="#work" className="transition-colors hover:text-copper">Our Work</a></li>
-                <li><a href="#process" className="transition-colors hover:text-copper">Process</a></li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-ink-950/80">Contact</p>
-              <ul className="mt-3 space-y-2 text-ink-950/55">
-                <li>
-                  <a href={site.phoneHref} className="transition-colors hover:text-copper">{site.phone}</a>
-                </li>
-                <li>
-                  <a href={`mailto:${site.email}`} className="transition-colors hover:text-copper">{site.email}</a>
-                </li>
-                <li>{site.city}, USA</li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-ink-950/80">Hours</p>
-              <ul className="mt-3 space-y-2 text-ink-950/55">
-                <li>Mon–Fri · 7a–6p</li>
-                <li>Sat · 8a–2p</li>
-                <li>24/7 storm line</li>
-              </ul>
-            </div>
-          </div>
+          <FooterCol title="Explore">
+            <li><a href="#services" className="hover:text-copper">Services</a></li>
+            <li><a href="#process" className="hover:text-copper">How we work</a></li>
+            <li><a href="#work" className="hover:text-copper">Recent work</a></li>
+            <li><a href="#faq" className="hover:text-copper">FAQ</a></li>
+          </FooterCol>
+          <FooterCol title="Contact">
+            <li><a href={site.phoneHref} className="hover:text-copper">{site.phone}</a></li>
+            <li><a href={`mailto:${site.email}`} className="hover:text-copper">{site.email}</a></li>
+            <li>{site.city}</li>
+          </FooterCol>
+          <FooterCol title="Hours">
+            <li>Mon–Fri, 7am–6pm</li>
+            <li>Sat, 8am–2pm</li>
+            <li className="text-copper">Storm line 24/7</li>
+          </FooterCol>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-ink-950/[0.08] pt-6 text-xs text-ink-950/40 md:flex-row md:items-center">
-          <p>
-            © {new Date().getFullYear()} {site.legalName} — a fictional brand.
-            This site is a design demo; every name, number, and review is invented.
-          </p>
-          <p>
-            Demo crafted to showcase modern web design for trade businesses.
-          </p>
-        </div>
+        <p className="mt-12 border-t border-bone/10 pt-6 text-xs leading-relaxed text-bone/40">
+          © {new Date().getFullYear()} {site.legalName} is a fictional company.
+          This site is a design demo: names, numbers and reviews are invented,
+          and the photos are stock images from Unsplash.
+        </p>
+      </div>
+
+      <div aria-hidden="true" className="mx-auto max-w-page px-5 md:px-8">
+        <motion.p
+          style={reduce ? undefined : { y }}
+          className="select-none whitespace-nowrap font-display text-[19vw] font-black uppercase leading-[0.8] text-coal-800 lg:text-[15rem]"
+        >
+          Copperline
+        </motion.p>
       </div>
     </footer>
+  );
+}
+
+function FooterCol({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <p className="font-display text-lg font-bold uppercase tracking-wide text-bone/80">{title}</p>
+      <ul className="mt-3 space-y-2 text-sm text-bone/55">{children}</ul>
+    </div>
   );
 }

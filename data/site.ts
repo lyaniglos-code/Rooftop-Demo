@@ -1,156 +1,145 @@
 /**
  * Copperline Roofing Co. — a completely fictional brand built for this demo.
- * Every name, number, quote, and credential here is invented.
+ * Every name, number, quote, and credential here is invented. The photos are
+ * Unsplash stock (free for commercial use), not Copperline jobs.
  */
 
 export const site = {
   name: "Copperline",
   legalName: "Copperline Roofing Co.",
-  tagline: "Raise the standard overhead.",
-  positioning:
-    "Craft-grade roofing for homes that plan on outliving the weather. Inspected honestly, built precisely, warrantied in writing.",
+  city: "Cedar Falls",
+  serviceArea: "Cedar Falls and the Tri-County area",
   phone: "(555) 014-7788",
   phoneHref: "tel:+15550147788",
   email: "hello@copperline.example",
-  city: "Cedar Falls",
-  serviceArea: "Serving Cedar Falls & the Tri-County area",
+  license: "Lic. #RC-40218",
 };
 
-export const trustedBy = [
-  "Cedar Falls HOA Alliance",
-  "Lakeview Property Group",
-  "Hartwell Builders",
-  "Northgate Realty",
-  "Miller & Sons Construction",
-  "Prairie State Insurance",
-  "Oakline Development",
-  "Summit Custom Homes",
+export const heroFacts = [
+  "Licensed and insured",
+  "10-year workmanship warranty",
+  "We work with your insurance",
 ];
 
 export const stats = [
-  { value: 2400, suffix: "+", label: "Roofs completed" },
-  { value: 28, suffix: " yrs", label: "In business" },
-  { value: 4.9, suffix: "★", label: "Average review", decimals: 1 },
-  { value: 50, suffix: "-yr", label: "Material warranty" },
-];
-
-export const buildStages = [
-  {
-    id: "deck",
-    kicker: "Stage 01 — Structure",
-    title: "Decking, checked board by board",
-    copy: "Everything above depends on what's below. We walk every rafter, replace soft decking, and re-nail the field to current wind code before a single layer goes on.",
-    stat: "100%",
-    statLabel: "of decking inspected before build",
-  },
-  {
-    id: "underlayment",
-    kicker: "Stage 02 — Moisture barrier",
-    title: "Synthetic underlayment, sealed tight",
-    copy: "A woven synthetic membrane goes down over the whole deck — 12× stronger than felt paper and watertight on its own, so your home is protected even mid-build.",
-    stat: "12×",
-    statLabel: "stronger than standard felt",
-  },
-  {
-    id: "flashing",
-    kicker: "Stage 03 — Water management",
-    title: "Ice shield, drip edge & flashing",
-    copy: "Leaks start at the edges. We run ice-and-water shield along eaves and valleys, then hand-bend metal drip edge and flashing at every wall, pipe, and chimney line.",
-    stat: "90%",
-    statLabel: "of leaks start at edges & penetrations",
-  },
-  {
-    id: "shingles",
-    kicker: "Stage 04 — The field",
-    title: "Architectural shingles, six nails each",
-    copy: "Class 3 impact-rated architectural shingles, laid to a chalk-lined grid and fastened with six nails per shingle — the spec that holds through 130 mph gusts.",
-    stat: "130",
-    statLabel: "mph wind rating, spec-fastened",
-  },
-  {
-    id: "ridge",
-    kicker: "Stage 05 — The finish",
-    title: "Ridge vent, caps & final walk",
-    copy: "A full-length ridge vent lets the attic breathe, matched caps finish the line, and a magnetic sweep clears every nail. Then we walk the roof with you — photos included.",
-    stat: "-30°",
-    statLabel: "cooler attics with balanced venting",
-  },
+  { value: 2400, suffix: "+", label: "Roofs installed" },
+  { value: 28, suffix: "", label: "Years in Cedar Falls" },
+  { value: 4.9, suffix: "", label: "Average review", decimals: 1 },
+  { value: 24, suffix: "hr", label: "Storm tarp response" },
 ];
 
 export const services = [
   {
-    title: "Full roof replacement",
-    copy: "Tear-off to final walk in as little as two days, with a written scope before we start and photo documentation after.",
-    icon: "home",
+    title: "Roof replacement",
+    copy: "Tear-off down to the deck, soft boards replaced, new underlayment and architectural shingles. Most homes take two days.",
+    image: "/images/service-replacement.jpg",
+    alt: "Roofer carrying a bundle of shingles across a roof",
   },
   {
     title: "Storm & hail repair",
-    copy: "Same-week emergency tarping, honest damage assessments, and help navigating your insurance claim end to end.",
-    icon: "storm",
+    copy: "Tarped within 24 hours. We document the damage the way adjusters want it and meet them on your roof.",
+    image: "/images/service-storm.jpg",
+    alt: "Roofer tearing off damaged shingles",
   },
   {
     title: "Standing-seam metal",
-    copy: "Hand-seamed metal roofing rated for 50+ years — quieter than you think, tougher than everything else on the block.",
-    icon: "metal",
+    copy: "Concealed-fastener panels that shrug off hail and last 50 years. Fourteen colors to pick from.",
+    image: "/images/service-metal.jpg",
+    alt: "Green standing-seam metal roof on a modern home",
   },
   {
     title: "Gutters & drainage",
-    copy: "Seamless gutters sized to your actual roof area, pitched correctly, and tied into downspouts that move water away.",
-    icon: "gutter",
+    copy: "Seamless six-inch gutters sized to your roof and pitched so the water ends up away from your foundation.",
+    image: "/images/service-gutters.jpg",
+    alt: "Rain running off the edge of a shingle roof",
   },
   {
-    title: "Skylights & ventilation",
-    copy: "Curb-mounted skylights and balanced intake/exhaust venting that cut attic heat and extend shingle life.",
-    icon: "sky",
+    title: "Skylights & venting",
+    copy: "Skylights flashed the right way, plus ridge and soffit vents that keep the attic from cooking your shingles.",
+    image: "/images/service-skylights.jpg",
+    alt: "Skylight framed into a wood ceiling",
   },
   {
-    title: "Annual inspections",
-    copy: "A 21-point checkup every spring: seals, flashing, fasteners, and a drone survey — with a report you can actually read.",
-    icon: "check",
+    title: "Inspections",
+    copy: "We walk the whole roof and photograph every problem we find. Free, and you keep the report either way.",
+    image: "/images/service-inspections.jpg",
+    alt: "Roofer inspecting the roof of a brick house",
   },
 ];
 
-export const processSteps = [
+export const steps = [
   {
     title: "Inspect",
-    copy: "A 40-minute on-roof and in-attic inspection with photos of everything we find — no ladder-shy estimates from the driveway.",
+    copy: "We get up on the roof and into the attic, photograph everything, and go through it with you at the kitchen table. The itemized quote lands the same week.",
+    image: "/images/service-inspections.jpg",
+    alt: "Roofer standing on a roof during an inspection",
   },
   {
-    title: "Quote",
-    copy: "One fixed price, itemized by layer. No allowances that balloon later, no pressure tactics, valid for 90 days.",
+    title: "Tear off",
+    copy: "Old shingles come off down to the deck. Soft boards get replaced instead of covered up. Tarps go over your plants and the trailer sits on plywood.",
+    image: "/images/service-storm.jpg",
+    alt: "Roofer removing old shingles",
   },
   {
     title: "Build",
-    copy: "A dedicated crew, a site supervisor you can text, tarped landscaping, and a magnetic nail sweep every single evening.",
+    copy: "Synthetic underlayment, ice shield in the valleys, new flashing at every wall and pipe, then the shingles. You get photos at the end of each day.",
+    image: "/images/crew.jpg",
+    alt: "Roofer in a safety harness nailing shingles",
   },
   {
-    title: "Protect",
-    copy: "50-year material and 10-year workmanship warranties registered in your name, plus a free checkup at year one.",
+    title: "Final walk",
+    copy: "We run a magnet over the yard, walk the finished roof with you, and register your warranty before the truck leaves.",
+    image: "/images/work-colonial.jpg",
+    alt: "Finished two-story home with a new roof",
+  },
+];
+
+export const projects = [
+  {
+    title: "Two-story colonial",
+    place: "Maple Grove",
+    scope: "Full tear-off, architectural shingles, new gutters",
+    image: "/images/work-colonial.jpg",
+    alt: "Two-story colonial home with a new shingle roof",
+  },
+  {
+    title: "Tudor revival",
+    place: "Northgate",
+    scope: "Steep-pitch replacement, new chimney flashing",
+    image: "/images/work-tudor.jpg",
+    alt: "Tudor-style home with a steep new roof",
+  },
+  {
+    title: "Standing-seam ridge",
+    place: "Lakeview",
+    scope: "24-gauge metal, concealed fasteners",
+    image: "/images/work-metal-ridge.jpg",
+    alt: "Close view of a metal roof ridge against a cloudy sky",
   },
 ];
 
 export const testimonials = [
   {
     quote:
-      "They found hail damage two other companies missed, handled the entire insurance claim, and the crew left our yard cleaner than they found it.",
+      "They found hail damage two other companies missed, handled the whole insurance claim, and left our yard cleaner than they found it.",
     name: "Dana Whitfield",
     role: "Homeowner, Maple Grove",
   },
   {
     quote:
-      "We manage 40 rental properties and Copperline is the only roofer we call. Fixed pricing, photo reports, zero call-backs in four years.",
+      "I manage forty rentals and Copperline is the only roofer I call. The price they quote is the price I pay, and I get photos of every job.",
     name: "Marcus Lee",
-    role: "Lakeview Property Group",
+    role: "Property manager",
   },
   {
     quote:
-      "The scroll-through build plan they showed us matched exactly what happened on site, day by day. First contractor that ever did what the website said.",
+      "Another roofer wanted to shingle right over our old roof. Copperline showed us photos of the rotted decking under it. Glad we didn't bury that.",
     name: "Priya Raman",
     role: "Homeowner, Cedar Falls",
   },
   {
     quote:
-      "Storm hit Friday night, tarp was on Saturday morning, new roof the following week. Their supervisor texted us progress photos the whole way.",
+      "Storm hit Friday night and the tarp was on Saturday morning. New roof the next week, with a text from the supervisor every evening.",
     name: "Tom & Ellie Bergstrom",
     role: "Homeowners, Northgate",
   },
@@ -159,22 +148,22 @@ export const testimonials = [
 export const faqs = [
   {
     q: "How long does a full replacement take?",
-    a: "Most homes are done in 1–2 days of on-site work. Complex roofs (steep pitches, multiple valleys, skylights) can run 3–4. You'll get a day-by-day schedule with your quote, and we don't start tear-off unless we can dry you in the same day.",
+    a: "Most homes take one to two days on site. Steep roofs, lots of valleys, or skylights can push it to three or four. The schedule comes with your quote, and we never start a tear-off we can't dry in the same day.",
   },
   {
     q: "Will you work with my insurance company?",
-    a: "Yes — it's about half of what we do. We document damage to adjuster standards, meet the adjuster on your roof, and bill the carrier directly so you only ever pay your deductible.",
+    a: "Yes, it's about half of our work. We document damage the way adjusters need it, meet them on the roof, and bill the carrier directly. You pay your deductible and that's it.",
   },
   {
-    q: "What's actually covered by the warranty?",
-    a: "Two separate warranties: a 50-year manufacturer warranty on materials, and our own 10-year workmanship warranty covering installation. Both are registered in your name and transfer once if you sell the home.",
+    q: "What does the warranty cover?",
+    a: "There are two. The manufacturer covers the materials for 50 years, and we cover the installation for 10. Both are registered in your name and transfer once if you sell.",
   },
   {
     q: "Do I need to be home during the build?",
-    a: "No. We just need access to power and the driveway clear. Your site supervisor sends morning and end-of-day photo updates, and nothing gets signed off until you've walked the finished roof with us.",
+    a: "No. We need the driveway clear and access to an outdoor outlet. Your supervisor texts photos in the morning and at the end of the day, and we don't sign off until you've seen the finished roof.",
   },
   {
-    q: "How do you protect my landscaping and driveway?",
-    a: "Catch tarps over all plantings, plywood over AC units, a debris trailer parked on boards, and a magnetic nail sweep of the lawn and driveway every evening — not just at the end.",
+    q: "How do you protect my yard?",
+    a: "Tarps over the plants, plywood over the AC unit, the trailer on boards, and a magnetic nail sweep of the lawn and driveway every evening, not just on the last day.",
   },
 ];
